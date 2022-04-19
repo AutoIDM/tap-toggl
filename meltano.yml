@@ -1,0 +1,26 @@
+version: 1
+project_id: ae6f8b6f-ad49-47b4-a8af-94ec1e1e1770
+plugins:
+  extractors:
+  - name: tap-toggl
+    namespace: tap_toggl
+    pip_url: -e .
+    executable: tap-toggl
+    capabilities:
+    - catalog
+    - discover
+    - state
+    settings:
+    - name: api_token
+      kind: password
+    - name: detailed_report_trailing_days
+      kind: integer
+    - name: start_date
+      kind: string
+    - name: user_agent
+      kind: string
+    config:
+      detailed_report_trailing_days: 3
+      start_date: '2022-04-03'
+      user_agent: AutoIDM
+      api_token: ''
